@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-my_df = pd.read_csv('/dashboard/main_data.csv')
+my_df = pd.read_csv('main_data.csv')
 df = my_df[['year', 'month', 'day','hour','PM2.5','PM10','CO','TEMP','PRES','DEWP','station']]
 
 st.set_page_config(page_title="Air Quality Dashboard",

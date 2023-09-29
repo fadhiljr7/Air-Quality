@@ -2,7 +2,7 @@
 
 This is a brief guide to running the Streamlit dashboard. Make sure you have installed all the required libraries before running the application. You can ignore the ipynb file because I only used it for comprehensive data cleaning and performing exploratory data analysis (EDA) before creating the data dashboard.
 
-## Insstal Dependencies
+## Install Dependencies
 
 To install all the required libraries, open your terminal/command prompt, navigate to this project folder, and run the following command:
 

@@ -42,32 +42,35 @@ day_count = int(df_selection["day"].count())
 average_temp = round(df_selection["TEMP"].mean(), 1)
 average_pres = round(df_selection["PRES"].mean(), 2)
 
-left_column, mid_column, right_column = st.columns(3)
+left_column, mid_column, mid2_column, right_column = st.columns(4)
 with left_column:
     st.subheader("Days in Total:")
     st.subheader(day_count)
 with mid_column:
     st.subheader("Average Temp °C:")
     st.subheader(average_temp)
-with right_column:
+with mid2_column:
     st.subheader("Average Pressure:")
     st.subheader(average_pres)
+with right_column:
+    st.subheader("PM2.5/PM10/CO:")
+    st.subheader("50/60/700⚠️")
 
 st.markdown("---")
 
 # ----- CHART -----
 grouped = df_selection.groupby(['year', 'station'])[['PM2.5', 'PM10', 'CO']].mean().reset_index()
-fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title='Tren Polusi Udara (2013-2017) di Tiga Stasiun')
+fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title='PM2.5 Concentration Trend Line')
 #st.plotly_chart(fig)
 
-fig2 = px.line(grouped, x="year", y="PM10", color="station", markers=True)
+fig2 = px.line(grouped, x="year", y="PM10", color="station", markers=True, title='PM10 Concentration Trend Line')
 #st.plotly_chart(fig2)
 
 left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig, use_container_width=True)
 right_column.plotly_chart(fig2, use_container_width=True)
 
-fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True)
+fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='CO Concentration Trend Line')
 #st.plotly_chart(fig3)
 
 # Menambahkan gambar dari URL
@@ -76,7 +79,7 @@ image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-
 
 left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig3, use_container_width=True)
-right_column.image(image_url, caption='Air Polution Effect', use_column_width=True)
+right_column.image(image_url, use_column_width=True)
 #st.dataframe(df_selection)
 
 st.write(

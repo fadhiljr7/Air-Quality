@@ -41,15 +41,15 @@ st.title(":bar_chart: Air Quality Dashboard")
 st.markdown("##")
 
 df['date'] = df['day'].astype(str) + '/' + df['month'].astype(str) + '/' + df['year'].astype(str)
-day_count = df_selection[["date"]].drop_duplicates()
+day_count = int(df_selection["date"].count())
 average_temp = round(df_selection["TEMP"].mean(), 1)
 average_pres = round(df_selection["PRES"].mean(), 2)
 
 left_column, mid_column, mid2_column, right_column = st.columns(4)
 with left_column:
     st.subheader("Days in Total:")
+    st.subheader(day_count)
     #st.subheader(day_count.shape[0])
-    st.subheader(day_count.shape[0])
 with mid_column:
     st.subheader("Average Temp °C:")
     st.subheader(average_temp)

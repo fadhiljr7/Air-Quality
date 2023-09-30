@@ -29,8 +29,8 @@ year_filter = st.sidebar.multiselect(
 
 temp_filter = st.sidebar.slider(
     "Temperature °C:",
-    min_value=df["TEMP"].min(),  # Nilai minimum
-    max_value=df["TEMP"].max(),  # Nilai maksimum
+    min_value=df["TEMP"].min(),  
+    max_value=df["TEMP"].max(), 
 )
 
 df_selection = df.query(
@@ -49,7 +49,6 @@ left_column, mid_column, mid2_column, right_column = st.columns(4)
 with left_column:
     st.subheader("Days in Total:")
     st.subheader(day_count)
-    #st.subheader(day_count.count())
 with mid_column:
     st.subheader("Average Temp °C:")
     st.subheader(average_temp)
@@ -79,7 +78,7 @@ fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='
 
 fig4 = px.bar(grouped, x='year', y='O3', color="station", title='Average O3 (Ozon)').update_layout(xaxis_title="Year", yaxis_title="Ozon (DU)", width=520)
 
-# Menambahkan gambar dari URL
+# add image from URL
 image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-levels-health-effects.jpeg'
 
 left_column, right_column = st.columns(2)

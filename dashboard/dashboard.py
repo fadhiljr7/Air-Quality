@@ -48,8 +48,8 @@ average_pres = round(df_selection["PRES"].mean(), 2)
 left_column, mid_column, mid2_column, right_column = st.columns(4)
 with left_column:
     st.subheader("Days in Total:")
-    #st.subheader(day_count)
-    st.subheader(day_count.count())
+    st.subheader(day_count)
+    #st.subheader(day_count.count())
 with mid_column:
     st.subheader("Average Temp °C:")
     st.subheader(average_temp)

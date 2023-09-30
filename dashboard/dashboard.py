@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px
 
 my_df = pd.read_csv('https://raw.githubusercontent.com/fadhiljr7/Air-Quality/main/dashboard/main_data.csv')
-df = my_df[['year', 'month', 'day','hour','PM2.5','PM10','CO','TEMP','PRES','DEWP','station']]
+df = my_df[['year', 'month', 'day','hour','PM2.5','PM10','CO','O3','TEMP','PRES','DEWP','station']]
 
 st.set_page_config(page_title="Air Quality Dashboard",
                    page_icon="bar_chart:",
@@ -75,7 +75,7 @@ right_column.plotly_chart(fig2, use_container_width=True)
 fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='Average CO (Carbon Monoxide)').update_yaxes(title_text="Carbon Monoxide (μm)")
 #st.plotly_chart(fig3)
 
-#fig4 = px.bar(grouped, x='year', y='O3', title='CO Concentration Trend Line')
+fig4 = px.bar(grouped, x='year', y='O3', title='CO Concentration Trend Line')
 
 # Menambahkan gambar dari URL
 image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-levels-health-effects.jpeg'

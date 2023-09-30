@@ -62,20 +62,20 @@ st.markdown("---")
 
 # ----- CHART -----
 grouped = df_selection.groupby(['year', 'station'])[['PM2.5', 'PM10', 'CO','O3']].mean().reset_index()
-fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title='Average PM2.5 Particles').update_yaxes(title_text="PM2.5 (μg/m³)")
+fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title='Average PM2.5 Particles').update_layout(xaxis_title="Year", yaxis_title="PM2.5 (μg/m³)")
 #st.plotly_chart(fig)
 
-fig2 = px.line(grouped, x="year", y="PM10", color="station", markers=True, title='Average PM10 Particles').update_yaxes(title_text="PM10 (μg/m³)")
+fig2 = px.line(grouped, x="year", y="PM10", color="station", markers=True, title='Average PM10 Particles').update_layout(xaxis_title="Year", yaxis_title="PM10 (μg/m³)")
 #st.plotly_chart(fig2)
 
 left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig, use_container_width=True)
 right_column.plotly_chart(fig2, use_container_width=True)
 
-fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='Average CO (Carbon Monoxide)').update_yaxes(title_text="Carbon Monoxide (μg/m³)")
+fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='Average CO (Carbon Monoxide)').update_layout(xaxis_title="Year", yaxis_title="Carbon Monoxide (μg/m³)")
 #st.plotly_chart(fig3)
 
-fig4 = px.bar(grouped, x='year', y='O3', title='Average O3 (Ozon)').update_yaxes(title_text="Ozon (DU)")
+fig4 = px.bar(grouped, x='year', y='O3', title='Average O3 (Ozon)').update_layout(xaxis_title="Year", yaxis_title="Ozon (DU)")
 
 # Menambahkan gambar dari URL
 image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-levels-health-effects.jpeg'

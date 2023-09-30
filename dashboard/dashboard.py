@@ -75,7 +75,7 @@ right_column.plotly_chart(fig2, use_container_width=True)
 fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='Average CO (Carbon Monoxide)').update_layout(xaxis_title="Year", yaxis_title="Carbon Monoxide (μg/m³)")
 #st.plotly_chart(fig3)
 
-fig4 = px.bar(grouped, x='year', y='O3', color="station", title='Average O3 (Ozon)').update_layout(xaxis_title="Year", yaxis_title="Ozon (DU)", width=520)
+fig4 = px.bar(grouped, x='year', y='O3', color="station", title='Average O3 (Ozon)').update_layout(xaxis_title="Year", yaxis_title="Ozon (DU)")
 
 # Menambahkan gambar dari URL
 image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-levels-health-effects.jpeg'

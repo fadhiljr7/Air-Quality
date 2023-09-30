@@ -40,7 +40,7 @@ df_selection = df.query(
 st.title(":bar_chart: Air Quality Dashboard")
 st.markdown("##")
 
-day_count = df_selection[['month']].drop_duplicates()
+day_count = df_selection[['day']].drop_duplicates()
 average_temp = round(df_selection["TEMP"].mean(), 1)
 average_pres = round(df_selection["PRES"].mean(), 2)
 

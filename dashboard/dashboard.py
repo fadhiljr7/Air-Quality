@@ -40,8 +40,8 @@ df_selection = df.query(
 st.title(":bar_chart: Air Quality Dashboard")
 st.markdown("##")
 
-dftest['date'] = df_selection['day'].astype(str) + '/' + df_selection['month'].astype(str) + '/' + df_selection['year'].astype(str)
-#day_count = df_selection.groupby(['month', 'day'])['year'].nunique().reset_index()
+df['date'] = df['day'].astype(str) + '/' + df['month'].astype(str) + '/' + df['year'].astype(str)
+day_count = df_selection[["date"]].drop_duplicates()
 average_temp = round(df_selection["TEMP"].mean(), 1)
 average_pres = round(df_selection["PRES"].mean(), 2)
 
@@ -49,7 +49,7 @@ left_column, mid_column, mid2_column, right_column = st.columns(4)
 with left_column:
     st.subheader("Days in Total:")
     #st.subheader(day_count.shape[0])
-    st.subheader(dftest.shape[0])
+    st.subheader(day_count.shape[0])
 with mid_column:
     st.subheader("Average Temp °C:")
     st.subheader(average_temp)

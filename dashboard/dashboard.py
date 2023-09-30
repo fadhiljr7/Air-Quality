@@ -4,6 +4,7 @@ import plotly.express as px
 
 my_df = pd.read_csv('https://raw.githubusercontent.com/fadhiljr7/Air-Quality/main/dashboard/main_data.csv')
 df = my_df[['year', 'month', 'day','hour','PM2.5','PM10','CO','O3','TEMP','PRES','DEWP','station']]
+df['date'] = df['day'].astype(str) + '/' + df['month'].astype(str) + '/' + df['year'].astype(str)
 
 st.set_page_config(page_title="Air Quality Dashboard",
                    page_icon="bar_chart:",
@@ -40,7 +41,6 @@ df_selection = df.query(
 st.title(":bar_chart: Air Quality Dashboard")
 st.markdown("##")
 
-df['date'] = df['day'].astype(str) + '/' + df['month'].astype(str) + '/' + df['year'].astype(str)
 day_count = int(df_selection["date"].count())
 average_temp = round(df_selection["TEMP"].mean(), 1)
 average_pres = round(df_selection["PRES"].mean(), 2)

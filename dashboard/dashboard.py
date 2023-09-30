@@ -88,7 +88,7 @@ right_column.plotly_chart(fig4, use_column_width=True)
 st.write(
     """
     <div style='text-align:center;'>
-        <h5>The higher values of PM2.5, PM10, CO, dan O3, the worse air quality.</h5>
+        <h5>The higher values of PM2.5, PM10, CO, and O3, the worse air quality.</h5>
     </div>
     """,
     unsafe_allow_html=True

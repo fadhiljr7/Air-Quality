@@ -61,7 +61,7 @@ with right_column:
 st.markdown("---")
 
 # ----- CHART -----
-grouped = df_selection.groupby(['year', 'station'])[['PM2.5', 'PM10', 'CO']].mean().reset_index()
+grouped = df_selection.groupby(['year', 'station'])[['PM2.5', 'PM10', 'CO','O3']].mean().reset_index()
 fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title='PM2.5 Concentration Trend Line')
 #st.plotly_chart(fig)
 
@@ -72,8 +72,10 @@ left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig, use_container_width=True)
 right_column.plotly_chart(fig2, use_container_width=True)
 
-fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='CO Concentration Trend Line')
+fig3 = px.line(grouped, x="year", y="CO", color="station", markers=True, title='Average CO (Carbon Monoxide)').update_yaxes(title_text="Carbon Monoxide (μm)")
 #st.plotly_chart(fig3)
+
+fig4 = px.bar(grouped, x='year', y='O3', title='CO Concentration Trend Line')
 
 # Menambahkan gambar dari URL
 image_url = 'https://www.howardluksmd.com/wp-content/uploads/2021/11/AQi-PM-2.5-levels-health-effects.jpeg'

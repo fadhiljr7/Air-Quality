@@ -15,3 +15,6 @@ pip install -r requirements.txt
 cd dashboard
 streamlit run dashboard.py
 ```
+## View Dashboard Directly
+Here's the link: https://air-quality-mufin.streamlit.app/
+![image](https://github.com/fadhiljr7/Air-Quality/assets/48880516/c300e94e-6bf1-4754-a845-7c6e829e139b)

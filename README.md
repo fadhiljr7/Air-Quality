@@ -16,5 +16,8 @@ cd dashboard
 streamlit run dashboard.py
 ```
 ## View Dashboard Directly
+In the data dashboard, you can directly observe the air pollution trends, starting from PM2.5 particles, PM10 particles, Carbon Monoxide (CO), and Ozone (O3) concentrations at each station. The larger the values of these compounds, the worse the air quality. Additionally, this dashboard also provides information on how to protect oneself from air pollution.
+
 Here's the link: https://air-quality-mufin.streamlit.app/
+
 ![image](https://github.com/fadhiljr7/Air-Quality/assets/48880516/c300e94e-6bf1-4754-a845-7c6e829e139b)

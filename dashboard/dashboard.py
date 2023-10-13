@@ -67,7 +67,6 @@ fig = px.line(grouped, x="year", y="PM2.5", color="station", markers=True, title
 #st.plotly_chart(fig)
 
 fig2 = px.line(grouped, x="year", y="PM10", color="station", markers=True, title='Average PM10 Particles').update_layout(xaxis_title="Year", yaxis_title="PM10 (μg/m³)")
-#st.plotly_chart(fig2)
 
 left_column, right_column = st.columns(2)
 left_column.plotly_chart(fig, use_container_width=True)

@@ -11,7 +11,7 @@ st.set_page_config(page_title="Air Quality Dashboard",
                    layout="wide")
 
 
-# ----- SIDEBAR -----
+# ----- SIDEBAR ------
 st.sidebar.image("https://hlassets.paessler.com/common/files/graphics/iot/sub-visual_iot-monitoring_air-quality-monitoring-v1.png")
 
 st.sidebar.header("Filter:")
